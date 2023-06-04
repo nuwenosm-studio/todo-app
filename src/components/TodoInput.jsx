@@ -1,8 +1,19 @@
-import React from 'react'
 
 const TodoInput = () => {
   return (
-    <div>TodoInput</div>
+    <form className="input_container">
+      <input 
+        type="text" 
+        value="Today, I will ..."
+        className="input_placeholder"
+      />
+
+      <input 
+        type="submit" 
+        value="submit" 
+        className="submit_button" 
+      />
+    </form>
   )
 }
 

@@ -43,7 +43,8 @@
   --height-button: 48px;
 
   /* border radius */
-  --br-container: 4px;
+  --br-placeholder: 4px;
+  --br-container: 8px;
 
   /* transition */
   --transition-regular: 0.4s ease-in-out;
@@ -85,11 +86,46 @@ a {
   font-weight: var(--fw-bold);
   color: var(--clr-dark);
   text-align: center;
-  margin: var(--mp-container) 0;
+  margin-top: var(--mp-container);
+  margin-bottom: var(--mp-element);
 }
-.project_container {
+.todo_form {
   padding: 0 var(--mp-element);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* ---------- ---------- ---------- ----------
-  Todo Form
+  Todo Input
 */
+.input_container {
+  background-color: #312E3E;
+  width: 420px;
+  height: 72px;
+  padding: 16px;
+  margin-bottom: var(--mp-container);
+  border-radius: var(--br-container);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input_placeholder,
+.submit_button {
+  height: 40px;
+  font-weight: var(--fw-bold);
+  border: none;
+  border-radius: var(--br-placeholder);
+  background-color: var(--clr-white);
+}
+.input_placeholder {
+  width: 300px;
+  color: var(--clr-light);
+  padding: 0 var(--mp-text);
+}
+.submit_button {
+  width: 72px;
+  color: var(--clr-white);
+  background-color: var(--clr-theme);
+  cursor: pointer;
+}

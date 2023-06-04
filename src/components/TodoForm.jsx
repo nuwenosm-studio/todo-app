@@ -5,7 +5,7 @@ import TodoLists from './TodoLists';
 
 const TodoForm = () => {
     return (
-        <div>
+        <div className="todo_form">
             <div className="todo_input"><TodoInput /></div>
             <div className="todo_progress"><TodoProgress /></div>
             <div className="todo_lists"><TodoLists /></div>
