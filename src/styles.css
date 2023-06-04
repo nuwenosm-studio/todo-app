@@ -16,7 +16,7 @@
   --fs-s: 14px;
   --fs-m: 16px;
   --fs-l: 24px;
-  --fs-xl: 36px;
+  --fs-xl: 32px;
 
   /* font-weight */
   --fw-regular: 400;
@@ -32,6 +32,7 @@
   --mp-small: 8px;
   --mp-text: 12px;
   --mp-element: 16px;
+  --mp-element2: 20px;
   --mp-container: 32px;
   --mp-section: 64px;
 
@@ -88,7 +89,7 @@ a {
 .project_title {
   width: 100%;
   font-size: var(--fs-xl);
-  font-weight: var(--fw-bold);
+  font-weight: 800;
   color: var(--clr-dark);
   text-align: center;
   margin-top: var(--mp-container);
@@ -142,6 +143,8 @@ a {
   width: 100%;
   font-size: var(--fs-l);
   font-weight: 800;
+  margin-bottom: var(--mp-container);
+
   display: flex;
   align-items: center;
 }
@@ -155,4 +158,69 @@ a {
 
   display: grid;
   place-items: center;
+}
+/* ---------- ---------- ---------- ----------
+  Todo Lists
+  *
+  *
+*/
+.todo_lists {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  padding: 48px 20px;
+  background-color: var(--clr-dark);
+  border-radius: var(--br-container);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo_item {
+  width: 100%;
+  height: 64px;
+  padding: 0 14px;
+  margin-bottom: var(--mp-element2);
+  background-color: var(--clr-light);
+  border-radius: var(--br-container);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo_task,
+.finish_button {
+  height: 36px;
+  background-color: var(--clr-white);
+  border-radius: var(--br-placeholder);
+
+  display: flex;
+  align-items: center;
+}
+.todo_task {
+  width: 300px;
+  padding: 0 16px;
+}
+.finish_button {
+  width: 36px;
+  justify-content: center;
+  cursor: pointer;
+}
+.edit_button {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 100px;
+  height: 50px;
+
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-white);
+  border: 4px solid var(--clr-dark);
+  border-radius: var(--br-container);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
