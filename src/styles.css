@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;800;900;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;800;900&display=swap');
 :root {
   /* colors */
   --clr-black: #000000;
@@ -74,11 +74,16 @@ a {
   text-decoration: none;
 }
 /* ---------- ---------- ---------- ----------
-    Project: Todo list
+    Todo list Project
     June 1st, 2023
+    *
+    *
 */
 .project_todoList {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .project_title {
   width: 100%;
@@ -90,17 +95,16 @@ a {
   margin-bottom: var(--mp-element);
 }
 .todo_form {
-  padding: 0 var(--mp-element);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 420px;
 }
 /* ---------- ---------- ---------- ----------
   Todo Input
+  *
+  *
 */
-.input_container {
-  background-color: #312E3E;
-  width: 420px;
+.todo_input {
+  background-color: var(--clr-dark);
+  width: 100%;
   height: 72px;
   padding: 16px;
   margin-bottom: var(--mp-container);
@@ -128,4 +132,27 @@ a {
   color: var(--clr-white);
   background-color: var(--clr-theme);
   cursor: pointer;
+}
+/* ---------- ---------- ---------- ----------
+  Todo Progress
+  *
+  *
+*/
+.todo_progress {
+  width: 100%;
+  font-size: var(--fs-l);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+.todo_percentage {
+  width: 80px;
+  height: 64px;
+  color: var(--clr-white);
+  background-color: var(--clr-theme);
+  border-radius: var(--br-container);
+  margin-right: var(--mp-element);
+
+  display: grid;
+  place-items: center;
 }

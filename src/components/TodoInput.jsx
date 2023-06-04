@@ -1,10 +1,10 @@
 
 const TodoInput = () => {
   return (
-    <form className="input_container">
+    <form className="todo_input">
       <input 
         type="text" 
-        value="Today, I will ..."
+        placeholder="Today, I will ..."
         className="input_placeholder"
       />
 

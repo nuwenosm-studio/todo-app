@@ -1,8 +1,10 @@
-import React from 'react'
 
 const TodoProgress = () => {
   return (
-    <div>TodoProgress</div>
+    <div className="todo_progress">
+      <div className="todo_percentage">25%</div>
+      completed
+    </div>
   )
 }
 
