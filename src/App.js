@@ -1,20 +1,13 @@
-import './App.css';
-import TodoList from './TodoList';
+import './styles.css';
+import TodoForm from './components/TodoForm';
 
 function App() {
 
-  const title = 'Todo List';
-  const color_arr = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'];
-
   return (
-    <div className="App">
-      <div className="content">
-        <h1>{title}</h1>
-      </div>
-      <div className="todoList">
-        <TodoList />
-      </div>
-    </div>
+  <div className="project_todoList">
+    <div className="project_title">Todo List</div>
+    <div className="project_container"><TodoForm /></div>
+  </div>
   );
 }
 

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;800;900;1000&display=swap');
+:root {
+  /* colors */
+  --clr-black: #000000;
+  --clr-white: #FFFFFF;
+  --clr-dark: #312E3E;
+  --clr-theme: #8066E8;
+  --clr-light: #A39CC1;
+  --clr-light2: #9D9BA7;
+  --clr-red: #E8667E;
+
+  /* font-family */
+  --font-main: 'Nunito', sans-serif;
+
+  /* font-size-mobile */
+  --fs-s: 14px;
+  --fs-m: 16px;
+  --fs-l: 24px;
+  --fs-xl: 36px;
+
+  /* font-weight */
+  --fw-regular: 400;
+  --fw-semi: 500;
+  --fw-bold: 700;
+
+  /* z index */
+  --z-back: -10;
+  --z-top: 10;
+  --z-toppest: 20;
+
+  /* margin & padding */
+  --mp-small: 8px;
+  --mp-text: 12px;
+  --mp-element: 16px;
+  --mp-container: 32px;
+  --mp-section: 64px;
+
+  /* container width */
+  --width-button: 128px;
+  --width-container: 320px;
+
+  /* container height */
+  --height-button: 48px;
+
+  /* border radius */
+  --br-container: 4px;
+
+  /* transition */
+  --transition-regular: 0.4s ease-in-out;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-size: var(--fs-m);
+  font-weight: var(--fw-regular);
+  font-family: var(--font-main);
+
+  color: var(--clr-black);
+  background-color: var(--clr-white);
+  line-height: 1.75;
+  letter-spacing: 0.75px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* ---------- ---------- ---------- ----------
+    Project: Todo list
+    June 1st, 2023
+*/
+.project_todoList {
+  width: 100%;
+}
+.project_title {
+  width: 100%;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark);
+  text-align: center;
+  margin: var(--mp-container) 0;
+}
+.project_container {
+  padding: 0 var(--mp-element);
+}
+/* ---------- ---------- ---------- ----------
+  Todo Form
+*/
