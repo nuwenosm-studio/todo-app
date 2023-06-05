@@ -5,7 +5,7 @@
   --clr-white: #FFFFFF;
   --clr-dark: #312E3E;
   --clr-theme: #8066E8;
-  --clr-light: #A39CC1;
+  --clr-light: #ada1de;
   --clr-light2: #9D9BA7;
   --clr-red: #E8667E;
 
@@ -183,6 +183,7 @@ a {
   margin-bottom: var(--mp-element2);
   background-color: var(--clr-light);
   border-radius: var(--br-container);
+  transition: var(--transition-regular);
 
   display: flex;
   align-items: center;
@@ -206,6 +207,18 @@ a {
   justify-content: center;
   cursor: pointer;
 }
+/* ------------------
+    completed tasks 
+*/
+.completed {
+  background-color: var(--clr-dark);
+}
+.completed .todo_task,
+.completed .finish_button {
+  background-color: var(--clr-light2);
+}
+
+
 .edit_button {
   position: absolute;
   top: -25px;

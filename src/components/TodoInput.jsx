@@ -6,7 +6,7 @@ const TodoInput = ({ arrayTask, setArrayTask }) => {
   const handleSubmitTask = (e) => {
     e.preventDefault();
     if (inputTask.trim() !== '') {
-      setArrayTask([inputTask, ...arrayTask]);
+      setArrayTask([{task: inputTask, completed: false}, ...arrayTask]);
     }
     setInputTask('');
   }

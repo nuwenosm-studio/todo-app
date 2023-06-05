@@ -14,7 +14,10 @@ const TodoForm = () => {
                 setArrayTask={setArrayTask}
             />
             <TodoProgress />
-            <TodoLists arrayTask={arrayTask} />
+            <TodoLists 
+                arrayTask={arrayTask}
+                setArrayTask={setArrayTask}
+            />
         </div>
     )
 }
