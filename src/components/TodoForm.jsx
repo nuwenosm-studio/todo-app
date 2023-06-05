@@ -13,7 +13,7 @@ const TodoForm = () => {
                 arrayTask={arrayTask} 
                 setArrayTask={setArrayTask}
             />
-            <TodoProgress />
+            <TodoProgress arrayTask={arrayTask} />
             <TodoLists 
                 arrayTask={arrayTask}
                 setArrayTask={setArrayTask}
