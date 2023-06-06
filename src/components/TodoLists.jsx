@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { BsCheckLg, BsTrash3 } from "react-icons/bs";
-import { TbEdit } from "react-icons/tb";
 
 const TodoLists = ({ arrayTask, setArrayTask }) => {
+    const [editables, setEditables] = useState(Array(arrayTask.length).fill(false));
 
     const handleCompletedTask = (index) => {
         const updatedTodo = arrayTask.map((task, i) => {
@@ -19,6 +20,24 @@ const TodoLists = ({ arrayTask, setArrayTask }) => {
         })
     }
 
+    const handleUpdateTask = (newTask, index) => {
+        const updatedTodo = arrayTask.map((task, i) => {
+            if (i === index) {
+                return { ...task, taskName: newTask };
+            }
+            return task;
+        });
+        setArrayTask(updatedTodo);
+    }
+
+    const toggleEditable = (index) => {
+        if (!arrayTask[index].completed) {
+            const updatedEditables = [...editables];
+            updatedEditables[index] = !updatedEditables[index];
+            setEditables(updatedEditables);
+        }
+    }
+
     return (
         <div className="todo_lists">
             {arrayTask.map((todo, index) => (
@@ -26,7 +45,6 @@ const TodoLists = ({ arrayTask, setArrayTask }) => {
                     key={index}
                     className={`todo_item ${todo.completed ? 'completed' : ''}`} 
                 >
-                    {/* Checked if task is completed */}
                     <div    
                         className="complete_button icon" 
                         onClick={() => handleCompletedTask(index)}
@@ -34,9 +52,26 @@ const TodoLists = ({ arrayTask, setArrayTask }) => {
                         {todo.completed ? "" : <BsCheckLg />}
                     </div>
                     
-                    <div className="todo_taskName">{todo.taskName}</div>
+                    {!editables[index] ? 
+                        <div 
+                            className="todo_taskName" 
+                            onClick={() => toggleEditable(index)}
+                        >
+                            {todo.taskName}
+                        </div> :
+
+                        <form 
+                            onSubmit={e => {e.preventDefault(); toggleEditable(index)}}
+                            className="todo_taskNameEdit" 
+                        >
+                            <input 
+                                type="text" 
+                                value={todo.taskName}
+                                onChange={e => handleUpdateTask(e.target.value, index)}
+                            />
+                        </form>
+                    }
                     
-                    {/* Delete task when clicking trash icon */}
                     <div 
                         className="delete_button icon" 
                         onClick={() => handleDeleteTask(index)}
@@ -45,12 +80,8 @@ const TodoLists = ({ arrayTask, setArrayTask }) => {
                     </div>
                 </div>
             ))}
-
-            <div className="edit_button">
-                Edit <TbEdit className="icon"/>
-            </div>
       </div>
     )
 }
 
-export default TodoLists
+export default TodoLists;

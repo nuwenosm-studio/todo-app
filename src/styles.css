@@ -7,7 +7,6 @@
   --clr-theme: #8066E8;
   --clr-light: #ada1de;
   --clr-light2: #9D9BA7;
-  --clr-red: #E8667E;
 
   /* font-family */
   --font-main: 'Nunito', sans-serif;
@@ -152,8 +151,8 @@ a {
   align-items: center;
 }
 .todo_percentage {
-  width: 80px;
-  height: 64px;
+  width: 72px;
+  height: 56px;
   color: var(--clr-white);
   background-color: var(--clr-theme);
   border-radius: var(--br-container);
@@ -168,10 +167,9 @@ a {
   *
 */
 .todo_lists {
-  position: relative;
   width: 100%;
   min-height: 500px;
-  padding: 48px 20px;
+  padding: 32px 20px;
   background-color: var(--clr-dark);
   border-radius: var(--br-container);
 
@@ -194,14 +192,22 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-.todo_taskName {
+.todo_taskName,
+.todo_taskNameEdit input {
   width: 250px;
   min-height: 36px;
   padding: 0 16px;
-  background-color: var(--clr-white);
   border-radius: var(--br-placeholder);
   display: flex;
   align-items: center;
+}
+.todo_taskName {
+  background-color: var(--clr-white);
+}
+.todo_taskNameEdit input {
+  border: none;
+  color: var(--clr-white);
+  background-color: var(--clr-dark);
 }
 .complete_button,
 .delete_button {
@@ -225,23 +231,4 @@ a {
   color: var(--clr-light2);
   background-color: var(--clr-dark);
   border: 1px solid var(--clr-light2);
-}
-
-.edit_button {
-  position: absolute;
-  top: -25px;
-  right: 0;
-  width: 100px;
-  height: 50px;
-
-  cursor: pointer;
-  font-weight: var(--fw-bold);
-  background-color: var(--clr-white);
-  border: 4px solid var(--clr-dark);
-  border-radius: var(--br-container);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
 }
