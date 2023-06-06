@@ -74,6 +74,9 @@ ul {
 a {
   text-decoration: none;
 }
+.icon {
+  font-size: 20px;
+}
 /* ---------- ---------- ---------- ----------
     Todo list Project
     June 1st, 2023
@@ -178,10 +181,12 @@ a {
 }
 .todo_item {
   width: 100%;
-  height: 64px;
-  padding: 0 14px;
+  min-height: 64px;
+  padding: 16px;
   margin-bottom: var(--mp-element2);
   background-color: var(--clr-light);
+
+  border: 1px solid var(--clr-dark);
   border-radius: var(--br-container);
   transition: var(--transition-regular);
 
@@ -189,35 +194,38 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-.todo_task,
-.finish_button {
-  height: 36px;
+.todo_taskName {
+  width: 250px;
+  min-height: 36px;
+  padding: 0 16px;
   background-color: var(--clr-white);
   border-radius: var(--br-placeholder);
-
   display: flex;
   align-items: center;
 }
-.todo_task {
-  width: 300px;
-  padding: 0 16px;
-}
-.finish_button {
+.complete_button,
+.delete_button {
   width: 36px;
-  justify-content: center;
+  height: 36px;
   cursor: pointer;
+
+  display: grid;
+  place-items: center;
+}
+.complete_button {
+  border: 1px solid var(--clr-white);
+  border-radius: var(--br-placeholder);
 }
 /* ------------------
     completed tasks 
 */
-.completed {
+.completed,
+.completed .todo_taskName,
+.completed .complete_button {
+  color: var(--clr-light2);
   background-color: var(--clr-dark);
+  border: 1px solid var(--clr-light2);
 }
-.completed .todo_task,
-.completed .finish_button {
-  background-color: var(--clr-light2);
-}
-
 
 .edit_button {
   position: absolute;

@@ -1,15 +1,16 @@
 import { useState } from 'react';
 
-const TodoInput = ({ arrayTask, setArrayTask }) => {
+const TodoInput = ({ onInsertTask }) => {
   const [inputTask, setInputTask] = useState("");
 
   const handleSubmitTask = (e) => {
     e.preventDefault();
     if (inputTask.trim() !== '') {
-      setArrayTask([{task: inputTask, completed: false}, ...arrayTask]);
+      onInsertTask(inputTask);
     }
     setInputTask('');
   }
+
   return (
     <form className="todo_input" onSubmit={handleSubmitTask}>
       <input 
@@ -22,7 +23,7 @@ const TodoInput = ({ arrayTask, setArrayTask }) => {
 
       <input 
         type="submit" 
-        value="submit" 
+        value="Add" 
         className="submit_button"
       />
     </form>
