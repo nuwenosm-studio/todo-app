@@ -7,7 +7,11 @@ const TodoInput = ({ setArrayTask }) => {
     e.preventDefault();
     if (inputTask.trim() !== '') {
       setArrayTask(prev => {
-        return [...prev, { taskName: inputTask, completed: false }];
+        return  [...prev, { taskName: inputTask, 
+                            completed: false, 
+                            editable: false 
+                          }
+                ];
       })
     }
     setInputTask('');
