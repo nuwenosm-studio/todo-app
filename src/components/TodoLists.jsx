@@ -13,6 +13,12 @@ const TodoLists = ({ arrayTask, setArrayTask }) => {
         setArrayTask(updatedTodo);
     };
 
+    const handleDeleteTask = (indexToRemove) => {
+        setArrayTask(prev => {
+            return prev.filter((taskObj, index) => index !== indexToRemove);
+        })
+    }
+
     return (
         <div className="todo_lists">
             {arrayTask.map((todo, index) => (
@@ -20,14 +26,21 @@ const TodoLists = ({ arrayTask, setArrayTask }) => {
                     key={index}
                     className={`todo_item ${todo.completed ? 'completed' : ''}`} 
                 >
+                    {/* Checked if task is completed */}
                     <div    
                         className="complete_button icon" 
                         onClick={() => handleCompletedTask(index)}
                     >
                         {todo.completed ? "" : <BsCheckLg />}
                     </div>
+                    
                     <div className="todo_taskName">{todo.taskName}</div>
-                    <div className="delete_button icon" onClick={() => handleCompletedTask(index)}>
+                    
+                    {/* Delete task when clicking trash icon */}
+                    <div 
+                        className="delete_button icon" 
+                        onClick={() => handleDeleteTask(index)}
+                    >
                         <BsTrash3 />
                     </div>
                 </div>

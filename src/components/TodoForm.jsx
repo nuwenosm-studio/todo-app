@@ -1,21 +1,22 @@
 import { useState } from 'react';
-import TodoView from './TodoView';
-import TodoEdit from './TodoEdit';
+import TodoInput from "./TodoInput";
+import TodoProgress from "./TodoProgress";
+import TodoLists from "./TodoLists";
 
 const TodoForm = () => {
+    
     const [arrayTask, setArrayTask] = useState([]);
-    const [editState, setEditState] = useState(true);
 
     return (
         <div className="todo_form">
-            { editState ?   
-                <TodoEdit 
-                />  : 
-                <TodoView
-                    arrayTask={arrayTask}
-                    setArrayTask={setArrayTask}
-                /> 
-            }
+            <TodoInput setArrayTask={setArrayTask} />
+
+            <TodoProgress arrayTask={arrayTask} />
+
+            <TodoLists
+                arrayTask={arrayTask}
+                setArrayTask={setArrayTask}
+            />
         </div>
     )
 }

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
-const TodoInput = ({ onInsertTask }) => {
+const TodoInput = ({ setArrayTask }) => {
   const [inputTask, setInputTask] = useState("");
 
   const handleSubmitTask = (e) => {
     e.preventDefault();
     if (inputTask.trim() !== '') {
-      onInsertTask(inputTask);
+      setArrayTask(prev => {
+        return [...prev, { taskName: inputTask, completed: false }];
+      })
     }
     setInputTask('');
   }
